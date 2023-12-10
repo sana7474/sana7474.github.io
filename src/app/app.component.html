@@ -1,0 +1,9 @@
+<mat-tab-group dynamicHeight animationDuration="500ms">
+  <mat-tab label="Поиск">
+    <app-select-tmk (selected)="selected($event)" [items]="items"/>
+  </mat-tab>
+  <mat-tab label="Тест">
+    <app-test-tmk [items]="answers"/>
+  </mat-tab>
+</mat-tab-group>
+

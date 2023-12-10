@@ -1,0 +1,24 @@
+<mat-radio-group *ngFor="let item of items" style="display: flex; flex-direction: column; z-index: 1">
+  <mat-label class="p-2 bg-primary-subtle m-2" style="border-radius: 5px">{{ item.question }}</mat-label>
+  <mat-radio-button
+    class="p-1"
+    [disabled]="item.disabled"
+    *ngFor="let answer of item.answers; index as i"
+    [ngStyle]="{'background-color': answer.color}"
+    (change)="setColor(item.id,i,answer.right)"
+    tabIndex="{{i}}"
+    value="{{answer.right}}">{{ answer.answer }}
+  </mat-radio-button>
+</mat-radio-group>
+
+<div *ngIf="showDialog"
+     (click)="showDialog = false"
+     style="display: flex;flex-wrap: wrap; align-content: center;justify-content: center; background-color: rgba(0,0,0,0.5); z-index: 100; height: 100vh; width: 100vw; position: fixed; top:0">
+  <mat-card>
+    <mat-card-content>Процент верных ответов {{ percent }}%</mat-card-content>
+  </mat-card>
+</div>
+
+
+
+

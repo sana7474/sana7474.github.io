@@ -1,0 +1,17 @@
+<div class="p-2" (mouseleave)="isShow = false">
+  <input
+    [value]="inputText"
+    (click)="inputClick()"
+    (keyup)="changeInput($event)"
+    autocomplete="off"
+    role="combobox"
+    class="form-control">
+  <div style="height: 5px"></div>
+  <ul *ngIf="isShow" class="list-group">
+    <li (click)="select(item)" [ngStyle]="{'background-color': item.color}" *ngFor="let item of data"
+        class="list-group-item">{{ item.name }}
+    </li>
+  </ul>
+</div>
+
+

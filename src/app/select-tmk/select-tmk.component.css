@@ -1,0 +1,19 @@
+input {
+  font-weight: bold;
+  font-family: Arial, serif;
+}
+
+.list-group {
+  box-shadow: 1px 1px 5px black;
+}
+
+
+ul {
+  max-height: 300px;
+  overflow: auto
+}
+
+li {
+  font-weight: bold;
+  font-family: Arial, serif;
+}
